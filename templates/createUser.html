@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Projet de Session" content="Projet de Session INF5190">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Create User</title>
+</head>
+
+<body>
+    <h1>Créer un profil d'utilisateur</h1>
+    
+    <div class="container">
+        <form class="row g-3 needs-validation" method="POST" novalidate>
+            <label class="form-label" for="name">Nom complet: </label>
+            {% if error_name %}
+            <p class="error">{{ error_name }}</p>
+            {% endif %}
+            <input class="form-control border rounded-pill {% if error_name %}border-danger{% else %}border-primary{% endif %}" type="text" id="name" name="name" oninput="this.value=this.value.toLowerCase()" placeholder="John" value="{{name}}" required>
+            <br>
+            <label class="form-label" for="email">Adresse courriel <em class="specifications">(courriel doit être valide et contenir au moins un "@" et un ".")</em>: </label>
+            {% if error_email %}
+            <p class="error">{{ error_email }}</p>
+            {% endif %}
+            <input class="form-control border rounded-pill {% if error_email %}border-danger{% else %}border-primary{% endif %}" type="text" id="email" name="email" placeholder="email.of.me@gmail.com" value="{{email}}" required>
+            <br>
+            <label class="form-label" for="pwd">Mot de passe <em class="specifications">(min. 8 characters, 1 majuscule, 1 minuscule, 1 numéro et 1 character spécial)</em>: </label>
+            {% if error_pwd %}
+            <p class="error">{{ error_pwd }}</p>
+            {% endif %}
+            <input class="form-control border rounded-pill {% if error_pwd %}border-danger{% else %}border-primary{% endif %}" type="password" id="pwd" name="pwd" placeholder="****" value="{{pwd}}" required>
+            <label class="form-label" for="pwd2">Confirmer le mot de passe: </label>
+            <input class="form-control border rounded-pill {% if error %}border-danger{% else %}border-primary{% endif %}" type="password" id="pwd2" name="pwd2" placeholder="****" value="{{pwd2}}" required>
+            <br>
+            <label class="form-label" for="list_nom_qr">Quartier à surveiller <em class="specifications">(choisir au moins 1)</em>: </label>
+            {% if error_list %}
+            <p class="error">{{ error_list }}</p>
+            {% endif %}
+            <div class="form-check form-check-inline">
+                <fieldset>
+                    {% set elements = namespace(value=0) %}
+
+                    {% for key, value in select_data.items() %}
+                        {% if list_nom_qr %}
+                            {% for nom_qr in list_nom_qr %}
+                                {% if nom_qr == value.nom_qr %}
+                                <input type="checkbox" class="btn-check" id="{{ value.id }}" name="list_nom_qr" value="{{ value.nom_qr }}" checked>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        {% if value.nom_qr not in list_nom_qr %}
+                            <input type="checkbox" class="btn-check" id="{{ value.id }}" name="list_nom_qr" value="{{ value.nom_qr }}">
+                        {% endif %}
+                        <label class="btn btn-outline-primary" for="{{ value.id }}">{{ value.nom_qr }}</label>
+                        {% if elements.value == 4 %}
+                            {% set elements.value = 0 %}<br><hr>
+                        {% else %}
+                            {% set elements.value = elements.value + 1 %}
+                        {% endif %}
+                    {% endfor %}
+                </fieldset>
+            </div>
+            <br>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <input class="btn btn-success rounded-pill" type="submit" name="create" value="Créer">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

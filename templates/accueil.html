@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Projet de Session" content="Projet de Session INF5190">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/a5_ajax.js') }}"></script>
+    <title>Déclarations de punaises Ville de Montréal</title>
+</head>
+
+<body>
+    <h1>Recherche</h1><hr>
+    {% if user_connected %}
+    <p class="text-start">{{ user_connected }}</p>
+    <a id="logoutButton" class="btn btn-primary" href="/users/logout" role="button">Déconnexion</a>
+    <a id="modifyListButton" class="btn btn-primary" href="/users/modify_user" role="button">Modifier liste quartier</a>
+    {% else %}
+    <a id="loginButton" class="btn btn-primary" href="/users/login" role="button">Connexion</a>
+    <a id="createUserButton" class="btn btn-primary" href="/users/create_user" role="button">Créer un utilisateur</a>
+    {% endif %}
+    <br>
+    <br>
+    <div class="container">
+        <form class="row g-1" method="POST">
+            <div class="row mb-1">
+                <fieldset>
+                    <p>Faire une recherche par:</p>
+                    <label for="nom_quartier">Nom de quartier</label>
+                    <input type="radio" id="nom_quartier" name="type_recherche" value="nom_quartier" checked><br>
+                    <label for="nom_arrondissement">Nom d'arrondissement</label>
+                    <input type="radio" id="nom_arrondissement" name="type_recherche" value="nom_arrondissement"><br>
+                </fieldset><hr>
+                {% if error_form %}
+                <p class="error">{{ error_form }}</p>
+                {% endif %}<br>
+                <label class="col-sm-2 col-form-label" for="recherche">Recherche: </label>
+                <div class="col-sm-10">
+                    <input class="form-control rounded-pill  {% if error_form %}border-danger{% endif %}" id="recherche" type="text" name="recherche" placeholder="Beaurivage">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <input class="btn btn-primary rounded-pill" type="submit" value="Rechercher" name="Rechercher">
+            </div>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <form class="row g-1" action="/declarations" method="GET">
+            <div class="row mb-1">
+                <fieldset>
+                    <div class="row">
+                        <p>Faire une recherche par date:</p>
+                        {% if error_form2 %}
+                        <p class="error">{{ error_form2 }}</p><br>
+                        {% endif %}
+                        <div class="col">
+                            <label for="du">Du:</label>
+                            <input class="form-control rounded-pill" type="date" id="du" name="du" required>
+                        </div>
+                        <div class="col">
+                            <label for="au">Au:</label>
+                            <input class="form-control rounded-pill" type="date" id="au" name="au" required>
+                        </div>
+                    </div><br>
+                </fieldset>
+                <fieldset>
+                    <label for="nom_qr">Nom de quartier (optionnel):</label>
+                        <select class="form-select" name="nom_qr" id="nom_qr">
+                            <option value="" selected></option>
+                            {% for key, value in select_data.items() %}
+                            <option value="{{ value.nom_qr }}">{{ key }}</option>
+                            {% endfor %}
+                        </select>
+                </fieldset>
+            </div><hr>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <input id="search_by_date" class="btn btn-primary rounded-pill" type="submit" value="Rechercher" name="Rechercher">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Projet de Session" content="Projet de Session INF5190">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Déclarations exterminations punaises de lit</title>
+</head>
+
+<body>
+    <h1>Déclarations exterminations punaises de lit</h1><hr>
+    <br><br><br>
+    
+    <div class="container">
+        <table class="table table-success">
+            <tr>
+                <th scope="col">Nom quartier</th>
+                <th scope="col">Nom arrondissement</th>
+                <th scope="col">Nombre de déclarations</th>
+            </tr>
+            {% if selected_data %}
+            {% for value in data %}
+            <tr>
+                {% if value.nom_qr == selected_data %}
+                <td class="table-primary" scope="row">{{ value.nom_qr }}</td>
+                <td class="table-primary" scope="row">{{ value.nom_arrond }}</td>
+                <td class="table-primary" scope="row">{{ value.occurrences }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            {% endif %}
+            {% if data %}
+            {% for value in data %}
+            <tr>
+                <td scope="row">{{ value.nom_qr }}</td>
+                <td scope="row">{{ value.nom_arrond }}</td>
+                <td scope="row">{{ value.occurrences }}</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="13"><h2>No déclarations.</h2></td>
+            </tr>
+            {% endif %}
+        </table>
+    </div>
+</body>
+</html>

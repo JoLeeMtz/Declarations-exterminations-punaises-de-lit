@@ -1,0 +1,79 @@
+,id,no_qr,nom_arrond,nom_qr,occurrences
+0,25,"""30""","""Ville-Marie""","""Sainte-Marie""",2076
+1,19,"""28""","""Mercier–Hochelaga-Maisonneuve""","""Maisonneuve""",1385
+2,46,"""13""","""Villeray–Saint-Michel–Parc-Extension""","""Crémazie""",1363
+3,14,"""11""","""Villeray–Saint-Michel–Parc-Extension""","""Parc-Extension""",1359
+4,8,"""18""","""Rosemont–La Petite-Patrie""","""Vieux-Rosemont""",1095
+5,6,"""31""","""Le Plateau-Mont-Royal""","""Lorimier""",1031
+6,11,"""61""","""Montréal-Nord""","""Est""",1022
+7,61,"""27""","""Mercier–Hochelaga-Maisonneuve""","""Hochelaga""",939
+8,90,"""01""","""Ahuntsic-Cartierville""","""Cartierville""",900
+9,21,"""15""","""Rosemont–La Petite-Patrie""","""Père-Marquette""",897
+10,16,"""29""","""Mercier–Hochelaga-Maisonneuve""","""Préfontaine""",844
+11,12,"""32""","""Le Plateau-Mont-Royal""","""Parc-Lafontaine""",837
+12,88,"""39""","""Ville-Marie""","""Montagne""",836
+13,108,"""42""","""Côte-des-Neiges–Notre-Dame-de-Grâce""","""Parc-Kent""",793
+14,82,"""16""","""Rosemont–La Petite-Patrie""","""Louis-Hébert""",761
+15,4,"""33""","""Le Plateau-Mont-Royal""","""Parc-Laurier""",760
+16,94,"""04""","""Ahuntsic-Cartierville""","""Sault-au-Récollet""",756
+17,118,"""38""","""Ville-Marie""","""René-Lévesque""",719
+18,100,"""64""","""Verdun""","""Verdun-Centre""",719
+19,9,"""34""","""Le Plateau-Mont-Royal""","""Mile End""",701
+20,3,"""20""","""Rosemont–La Petite-Patrie""","""Marie-Victorin""",679
+21,18,"""09""","""Villeray–Saint-Michel–Parc-Extension""","""Gabriel-Sagard""",663
+22,123,"""47""","""Le Sud-Ouest""","""Pointe-Saint-Charles""",662
+23,49,"""14""","""Rosemont–La Petite-Patrie""","""Saint-Édouard""",584
+24,2,"""44""","""Côte-des-Neiges–Notre-Dame-de-Grâce""","""Upper Lachine""",584
+25,92,"""56""","""Saint-Laurent""","""Grenet""",583
+26,66,"""26""","""Mercier–Hochelaga-Maisonneuve""","""Longue-Pointe""",566
+27,13,"""17""","""Rosemont–La Petite-Patrie""","""Étienne Desmarteaux""",565
+28,29,"""63""","""Saint-Léonard""","""Grande-Prairie""",554
+29,142,"""62""","""Saint-Léonard""","""Port-Maurice""",549
+30,59,"""35""","""Le Plateau-Mont-Royal""","""Saint-Louis""",540
+31,62,"""43""","""Côte-des-Neiges–Notre-Dame-de-Grâce""","""Savane""",524
+32,35,"""07""","""Villeray–Saint-Michel–Parc-Extension""","""Sainte-Lucie""",510
+33,137,"""45""","""Côte-des-Neiges–Notre-Dame-de-Grâce""","""Loyola""",508
+34,23,"""60C""","""Montréal-Nord""","""Centre""",500
+35,33,"""50""","""Le Sud-Ouest""","""Saint-Henri""",498
+36,238,"""51""","""Le Sud-Ouest""","""Petite-Bourgogne""",483
+37,113,"""66""","""Verdun""","""Desmarchais-Crawford""",464
+38,152,"""54""","""Rivière-des-Prairies–Pointe-aux-Trembles""","""Pointe-aux-Trembles""",458
+39,10,"""41""","""Côte-des-Neiges–Notre-Dame-de-Grâce""","""Édouard-Montpetit""",450
+40,74,"""03""","""Ahuntsic-Cartierville""","""Nicolas-Viel""",449
+41,38,"""70""","""Lachine""","""Vieux-Lachine - Saint-Pierre""",435
+42,5,"""10""","""Villeray–Saint-Michel–Parc-Extension""","""François-Perrault""",432
+43,7,"""19""","""Rosemont–La Petite-Patrie""","""Petite-Côte""",430
+44,65,"""55""","""Saint-Laurent""","""Chameran/Montpellier""",419
+45,36,"""05""","""Ahuntsic-Cartierville""","""Saint-Sulpice""",418
+46,275,"""68""","""LaSalle""","""Sault-Saint-Louis""",403
+47,27,"""40""","""Côte-des-Neiges–Notre-Dame-de-Grâce""","""Snowdon""",398
+48,31,"""52""","""Rivière-des-Prairies–Pointe-aux-Trembles""","""Marc-Aurèle-Fortin""",374
+49,50,"""73""","""Anjou""","""Anjou""",367
+50,187,"""60A""","""Montréal-Nord""","""Ouest""",366
+51,34,"""36""","""Le Plateau-Mont-Royal""","""Milton-Parc""",350
+52,78,"""08""","""Villeray–Saint-Michel–Parc-Extension""","""René-Goupil""",348
+53,24,"""21""","""Mercier–Hochelaga-Maisonneuve""","""Louis-Riel""",333
+54,1,"""24""","""Mercier–Hochelaga-Maisonneuve""","""Beaurivage""",325
+55,98,"""06""","""Ahuntsic-Cartierville""","""La Visitation""",304
+56,97,"""12""","""Villeray–Saint-Michel–Parc-Extension""","""Parc-Jarry""",301
+57,15,"""67""","""LaSalle""","""Cecil-P.-Newman""",275
+58,194,"""02""","""Ahuntsic-Cartierville""","""Nouveau-Bordeaux""",266
+59,393,"""23""","""Mercier–Hochelaga-Maisonneuve""","""Tétreaultville""",266
+60,138,"""48""","""Le Sud-Ouest""","""Côte-Saint-Paul""",238
+61,17,"""60B""","""Montréal-Nord""","""Centre-Nord""",235
+62,37,"""22""","""Mercier–Hochelaga-Maisonneuve""","""Dupéré""",214
+63,110,"""46""","""Côte-des-Neiges–Notre-Dame-de-Grâce""","""Côte-Saint-Antoine""",210
+64,57,"""37""","""Ville-Marie""","""Vieux-Montréal""",182
+65,106,"""74""","""Outremont""","""Outremont""",170
+66,20,"""49""","""Le Sud-Ouest""","""Ville-Émard""",124
+67,344,"""72""","""Pierrefonds-Roxboro""","""Pierrefonds-Est""",101
+68,416,"""59""","""Saint-Laurent""","""Du College/Hodge""",95
+69,274,"""69""","""Lachine""","""Lachine-Ouest""",81
+70,1456,"""57""","""Saint-Laurent""","""Dutrisac""",73
+71,401,"""25""","""Mercier–Hochelaga-Maisonneuve""","""Guybourg""",72
+72,348,"""58""","""Saint-Laurent""","""Bois-Francs""",59
+73,1509,"""53""","""Rivière-des-Prairies–Pointe-aux-Trembles""","""Rivière-des-Prairies""",34
+74,4344,"""65""","""Verdun""","""Ile-des-Soeurs""",30
+75,741,"""71""","""Pierrefonds-Roxboro""","""Pierrefonds-Ouest""",24
+76,1998,"""75""","""L'Île-Bizard–Sainte-Geneviève""","""L'Île-Bizard–Sainte-Geneviève""",18
+77,37723,"""85""",,"""Dorval""",3

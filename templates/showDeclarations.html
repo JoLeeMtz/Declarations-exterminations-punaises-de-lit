@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Projet de Session" content="Projet de Session INF5190">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Déclarations exterminations punaises de lit</title>
+</head>
+
+<body>
+    <h1>Déclarations exterminations punaises de lit</h1><hr>
+    <br><br><br>
+    
+    <div class="container">
+        <table class="table table-success table-striped">
+            <tr>
+                <th scope="col">Numéro de déclaration</th>
+                <th scope="col">Date de déclaration</th>
+                <th scope="col">Date inspection visit prévu</th>
+                <th scope="col">Nombre extermination minimum</th>
+                <th scope="col">Date début traitement</th>
+                <th scope="col">Date fin traitement</th>
+                <th scope="col">Numéro quartier</th>
+                <th scope="col">Nom quartier</th>
+                <th scope="col">Nom arrondissement</th>
+                <th scope="col">Coordonné X</th>
+                <th scope="col">Coordonné Y</th>
+                <th scope="col">Longitude</th>
+                <th scope="col">Latitude</th>
+            </tr>
+            {% if data %}
+            {% for rows in data %}
+            <tr>
+                <td scope="row">{{ rows[1] }}</td>
+                <td scope="row">{{ rows[2] }}</td>
+                <td scope="row">{{ rows[3] }}</td>
+                <td scope="row">{{ rows[4] }}</td>
+                <td scope="row">{{ rows[5] }}</td>
+                <td scope="row">{{ rows[6] }}</td>
+                <td scope="row">{{ rows[7] }}</td>
+                <td scope="row">{{ rows[8] }}</td>
+                <td scope="row">{{ rows[9] }}</td>
+                <td scope="row">{{ rows[10] }}</td>
+                <td scope="row">{{ rows[11] }}</td>
+                <td scope="row">{{ rows[12] }}</td>
+                <td scope="row">{{ rows[13] }}</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="13"><h2>No déclarations.</h2></td>
+            </tr>
+            {% endif %}
+        </table>
+    </div>
+</body>
+</html>

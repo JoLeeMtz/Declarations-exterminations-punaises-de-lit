@@ -1,0 +1,170 @@
+#%RAML 1.0
+title: API Déclarations de punaises Ville de Montréal
+mediaType: application/json
+types:
+  NewUser:
+    properties:
+      email:
+        type: string
+        required: true
+      name:
+        type: string
+        required: true
+      list_nom_qr:
+        type: string[]
+        required: true
+      pwd:
+        type: string
+        required: true
+  QuartierAvecPlusieursDeclarations:
+    properties:
+      id:
+        type: integer
+        required: true
+      no_qr:
+        type: string
+        required: true
+      nom_qr:
+        type: string
+        required: true
+      occurences:
+        type: number
+        required: true
+  ExistingDeclarations:
+    properties:
+      id:
+        type: integer
+        required: true
+      NO_DECLARATION:
+        type: integer
+        required: true
+      DATE_DECLARATION:
+        type: datetime-only
+        required: true
+      DATE_INSP_VISPRE:
+        type: date-only
+        required: true
+      NBR_EXTERMIN:
+        type: number
+        required: false
+      DATE_DEBUTTRAIT:
+        type: date-only
+        required: false
+      DATE_FINTRAIT:
+        type: date-only
+        required: false
+      No_QR:
+        type: string
+        required: true
+      NOM_QR:
+        type: string
+        required: true
+      NOM_ARROND:
+        type: string
+        required: true
+      COORD_X:
+        type: number
+        format: float
+        required: true
+      COORD_Y:
+        type: number
+        format: float
+        required: true
+      LONGITUDE:
+        type: number
+        format: float
+        required: true
+      LATITUDE:
+        type: number
+        format: float
+        required: true
+/declarations?du={date_debut}&au={date_fin}:
+  get:
+    description: Affiche les déclarations qui ont les dates de déclaration entre les dates spécifiées dans les paramètres "du" et "au".
+    queryParameters:
+      date_debut:
+        description: Date du début de traitement. En format ISO 8601 (ex:2018-05-08).
+        type: date
+        required: true
+      date_fin:
+        description: Date de fin de traitement. En format ISO 8601 (ex:2020-05-15).
+        type: date
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            type: ExistingDeclarations[]
+      400:
+        description: Not a valid date, date format expected YYYY-MM-DD.
+      406:
+        description: Information/parameters missing.
+/api:
+  /nombre-declarations-par-qr:
+    /json:
+      get:
+        description: Affiche la liste des quartiers de déclarations avec le nombre de déclarations par quartier connues en format JSON, en ordre décroissant.
+        responses:
+          200:
+            body:
+              application/json:
+                type: QuartierAvecPlusieursDeclarations[]
+    /xml:
+      get:
+        description: Affiche la liste des quartiers de déclarations avec le nombre de déclarations par quartier connues en format XML, en ordre décroissant.
+        responses:
+          200:
+            body:
+              application/xml:
+                type: QuartierAvecPlusieursDeclarations[]
+    /csv:
+      get:
+        description: Affiche la liste des quartiers de déclarations avec le nombre de déclarations par quartier connues en format CSV, en ordre décroissant.
+        responses:
+          200:
+            body:
+              application/csv:
+                type: QuartierAvecPlusieursDeclarations[]
+  /users:
+    /create_user:
+      post:
+        description: Créer un usager avec des informations minimums requis.
+        body:
+          application/json:
+            type: NewUser
+            example:
+              email: "johnwick@gmail.com"
+              name: "John Wick"
+              list_nom_qr: ["Anjou", "Cartierville", "Centre"]
+              pwd: "imjohnwick"
+        responses:
+          201:
+            description: L'usager a été créer.
+            body:
+              application/json:
+                type: NewUser
+                example:
+                  email: "johnwick@gmail.com"
+                  name: "John Wick"
+                  list_nom_qr: ["Anjou", "Cartierville", "Centre"]
+                  pwd: "$2b$12$DQD/dY7TTL70eb6rM/e8uuyWgXg1lwT6ipOOnyojUnR7sIiV6qwgm"
+          401:
+            description: One or more element(s) in list_nom_qr is/are not valid.
+            body:
+              application/json:
+                type: NewUser
+                example:
+                  success: False
+                  message: User not created.
+          402:
+            description: Le champs nom doit contenir que des lettres.
+          403:
+            description: Veuillez remplir le champs nom.
+          404:
+            description: Le champs adresse courriel n'est pas valide.
+          405:
+            description: Veuillez remplir le champs adresse courriel.
+          409:
+            description: L'adresse courriel inscrit est déjà utilisé.
+          412:
+            description: property_variable_name is a required property/Additional properties are not allowed.
