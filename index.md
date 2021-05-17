@@ -3,9 +3,9 @@
 **Author:** Joaquin Lee Martinez\
 Copyright Joaquin Lee Martinez, 2021
 
->>>
+>
 Le projet consiste à récupérer un ensemble de données provenant de la ville de Montréal et d'offrir des services à partir de ces données. Il s'agit de données ouvertes à propos d’extermination de punaises de lits.
->>>
+>
 
 ## Quick Start
 
@@ -28,9 +28,7 @@ Voici une liste des librairies qui seront nécessaires d'installer pour le fonct
 - [Flask-Authlib-Client](https://pypi.org/project/Flask-Authlib-Client/)
 - [python-dotenv](https://pypi.org/project/python-dotenv/)
 
-## Program Files
-
-> List the program files and what they are for.
+## Fichiers
 
 `app.py` --- Application pincipal.\
 `database.py` --- Fonctions en liens avec la base de données.\
