@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+# Déclarations de punaises de lits de la ville de Montréal
 
-You can use the [editor on GitHub](https://github.com/JoLeeMtz/Declarations-exterminations-punaises-de-lit/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+**Author:** Joaquin Lee Martinez\
+Copyright Joaquin Lee Martinez, 2021
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+>>>
+Le projet consiste à récupérer un ensemble de données provenant de la ville de Montréal et d'offrir des services à partir de ces données. Il s'agit de données ouvertes à propos d’extermination de punaises de lits.
+>>>
 
-### Markdown
+## Quick Start
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+> Pour partir le programme, il faut être situé à la racine du projet et lancer un terminal à cet endroit.
 
-```markdown
-Syntax highlighted code block
+Pour exécuter le programme:
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+python3 app.py
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Prérequis
 
-### Jekyll Themes
+Voici une liste des librairies qui seront nécessaires d'installer pour le fonctionnement du programme, les liens contiennent les indications pour l'installation des librairies (programme fait sous Windows):
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JoLeeMtz/Declarations-exterminations-punaises-de-lit/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- [APScheduler](https://pypi.org/project/APScheduler/)
+- [json2xml](https://pypi.org/project/json2xml/)
+- [pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html)
+- [flask-json-schema](https://pypi.org/project/flask-json-schema/)
+- [Flask-Authlib-Client](https://pypi.org/project/Flask-Authlib-Client/)
+- [python-dotenv](https://pypi.org/project/python-dotenv/)
 
-### Support or Contact
+## Program Files
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+> List the program files and what they are for.
+
+`app.py` --- Application pincipal.\
+`database.py` --- Fonctions en liens avec la base de données.\
+`declaration.py` --- Class Declaration, utilisé principalement pour aider à faire l'API.\
+`inserDataDB.py` --- Application qui permet d'insérer dans la base de données SQLite "database/declarations_punaises_lit_test.db", les données qui se trouve dans le lien "https://data.montreal.ca/dataset/49ff9fe4-eb30-4c1a-a30a-fca82d4f5c2f/resource/6173de60-c2da-4d63-bc75-0607cb8dcb74/download/declarations-exterminations-punaises-de-lit.csv".\
+`doc.raml` --- Fichier qui génère la documentation pour le service REST.\
+`requirements.txt` --- Fichier qui contient les imports nécessaire pour le fonctionnement de l'application web.\
+`schemas.py` --- JSON-Schema.\
+`user.py` --- La class User qui permet de créer l'objet User du database.
