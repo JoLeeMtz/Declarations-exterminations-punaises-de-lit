@@ -28,7 +28,7 @@ Voici une liste des librairies qui seront nécessaires d'installer pour le fonct
 - [Flask-Authlib-Client](https://pypi.org/project/Flask-Authlib-Client/)
 - [python-dotenv](https://pypi.org/project/python-dotenv/)
 
-## Program Files
+## Fichiers
 
 `app.py` --- Application pincipal.\
 `database.py` --- Fonctions en liens avec la base de données.\
